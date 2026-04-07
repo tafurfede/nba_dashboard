@@ -294,7 +294,7 @@ def main():
         formatted_df['Correct'] = formatted_df['Correct'].map({True: '✓', False: '✗'})
         
         # Apply conditional formatting to the "Correct" column
-        styled_df = formatted_df.style.applymap(highlight_correct, subset=["Correct"])
+        styled_df = formatted_df.style.map(highlight_correct, subset=["Correct"])
         
         # Display the styled DataFrame with a scrollbar
         st.dataframe(styled_df, use_container_width=True, height=400)
